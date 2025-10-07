@@ -1,0 +1,460 @@
+Input JSON:
+{
+  "transcript": "Add a new lead: Rohan Sharma from Gurgaon, phone 9876543210, source Instagram.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "LEAD_CREATE",
+  "entities": {
+    "name": "Rohan Sharma",
+    "city": "Gurgaon",
+    "phone": "+919876543210",
+    "email": null,
+    "visit_time": null,
+    "lead_id": null,
+    "status": "NEW",
+    "source": "Instagram"
+  },
+  "crm_call": {
+    "endpoint": "/crm/lead/create",
+    "method": "POST",
+    "status_code": 200
+  },
+  "result": {
+    "message": "Successfully processed intent 'LEAD_CREATE' for user pytest-demo."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Create lead name Priya Nair, city Mumbai, contact 91234-56789.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "LEAD_CREATE",
+  "entities": {
+    "name": "Priya Nair",
+    "city": "Mumbai",
+    "phone": "+919123456789",
+    "email": null,
+    "visit_time": null,
+    "lead_id": null,
+    "status": "NEW",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": "/crm/lead/create",
+    "method": "POST",
+    "status_code": 200
+  },
+  "result": {
+    "message": "Successfully processed intent 'LEAD_CREATE' for user pytest-demo."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Add a customer profile for Aarav Mehta in Pune, source LinkedIn.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "LEAD_CREATE",
+  "error": {
+    "type": "VALIDATION_ERROR",
+    "details": {
+      "field": "phone",
+      "reason": "phone_incomplete",
+      "hint": "Phone number missing or invalid (include +91 or 10 digits)."
+    }
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Register new client Sneha Kapoor, number 8899776655, from Delhi.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "LEAD_CREATE",
+  "entities": {
+    "name": "Sneha Kapoor",
+    "city": "Delhi",
+    "phone": "+918899776655",
+    "email": null,
+    "visit_time": null,
+    "lead_id": null,
+    "status": "NEW",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": "/crm/lead/create",
+    "method": "POST",
+    "status_code": 200
+  },
+  "result": {
+    "message": "Successfully processed intent 'LEAD_CREATE' for user pytest-demo."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Update client 9c2d meeting on 12-10-2025 10am.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "VISIT_SCHEDULE",
+  "entities": {
+    "name": null,
+    "city": null,
+    "phone": "1210202510",
+    "email": null,
+    "visit_time": "2025-10-10T00:00:00",
+    "lead_id": "9c2d",
+    "status": "FOLLOW_UP",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": "/crm/visit/schedule",
+    "method": "POST",
+    "status_code": 200
+  },
+  "result": {
+    "message": "Successfully processed intent 'VISIT_SCHEDULE' for user pytest-demo."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Schedule inspection 2025-10-15 18:30 for 3w2rq2345tt in Bengaluru.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "VISIT_SCHEDULE",
+  "entities": {
+    "name": null,
+    "city": "Bengaluru",
+    "phone": "2025101518",
+    "email": null,
+    "visit_time": "2025-10-15T18:30:00",
+    "lead_id": "2025",
+    "status": "FOLLOW_UP",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": "/crm/visit/schedule",
+    "method": "POST",
+    "status_code": 200
+  },
+  "result": {
+    "message": "Successfully processed intent 'VISIT_SCHEDULE' for user pytest-demo."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Schedule a visit for lead 7b1b8f54 at 3 pm tomorrow.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "VISIT_SCHEDULE",
+  "entities": {
+    "name": null,
+    "city": null,
+    "phone": null,
+    "email": null,
+    "visit_time": "2025-10-08T15:00:00",
+    "lead_id": "7b1b8f54",
+    "status": "FOLLOW_UP",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": "/crm/visit/schedule",
+    "method": "POST",
+    "status_code": 200
+  },
+  "result": {
+    "message": "Successfully processed intent 'VISIT_SCHEDULE' for user pytest-demo."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Fix a site visit for lead 8f2a on Oct the 15th of 2025 at 5:00 pm IST.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "VISIT_SCHEDULE",
+  "error": {
+    "type": "VALIDATION_ERROR",
+    "details": {
+      "field": "visit_time",
+      "reason": "visit_date_incomplete",
+      "hint": "Visit datetime missing or invalid (expected ISO, future date)."
+    }
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Book an appointment with client 9c2d for property tour next Monday.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "VISIT_SCHEDULE",
+  "entities": {
+    "name": null,
+    "city": null,
+    "phone": null,
+    "email": null,
+    "visit_time": "2025-10-13T00:00:00",
+    "lead_id": "9c2d",
+    "status": "FOLLOW_UP",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": "/crm/visit/schedule",
+    "method": "POST",
+    "status_code": 200
+  },
+  "result": {
+    "message": "Successfully processed intent 'VISIT_SCHEDULE' for user pytest-demo."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Update lead 7b1b8f54 to in progress.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "LEAD_UPDATE",
+  "entities": {
+    "name": null,
+    "city": null,
+    "phone": null,
+    "email": null,
+    "visit_time": null,
+    "lead_id": "7b1b8f54",
+    "status": "IN_PROGRESS",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": "/crm/lead/update",
+    "method": "POST",
+    "status_code": 200
+  },
+  "result": {
+    "message": "Successfully processed intent 'LEAD_UPDATE' for user pytest-demo."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Mark lead 7b1b8f54 as won. Notes: booked unit A2.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "LEAD_UPDATE",
+  "entities": {
+    "name": "Mark",
+    "city": null,
+    "phone": null,
+    "email": null,
+    "visit_time": null,
+    "lead_id": "7b1b8f54",
+    "status": "WON",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": "/crm/lead/update",
+    "method": "POST",
+    "status_code": 200
+  },
+  "result": {
+    "message": "Successfully processed intent 'LEAD_UPDATE' for user pytest-demo."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Change status of lead 7b1b8f54 to lost.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "LEAD_UPDATE",
+  "entities": {
+    "name": null,
+    "city": null,
+    "phone": null,
+    "email": null,
+    "visit_time": "2025-10-09T00:00:00",
+    "lead_id": "7b1b8f54",
+    "status": "LOST",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": "/crm/lead/update",
+    "method": "POST",
+    "status_code": 200
+  },
+  "result": {
+    "message": "Successfully processed intent 'LEAD_UPDATE' for user pytest-demo."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Modify lead 8c1d to follow up tomorrow.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "LEAD_UPDATE",
+  "entities": {
+    "name": null,
+    "city": null,
+    "phone": null,
+    "email": null,
+    "visit_time": "2025-10-08T06:34:54.449284",
+    "lead_id": "8c1d",
+    "status": "FOLLOW_UP",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": "/crm/lead/update",
+    "method": "POST",
+    "status_code": 200
+  },
+  "result": {
+    "message": "Successfully processed intent 'LEAD_UPDATE' for user pytest-demo."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Can you help me?",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "UNKNOWN",
+  "entities": {
+    "name": null,
+    "city": null,
+    "phone": null,
+    "email": null,
+    "visit_time": "2025-10-08T00:00:00",
+    "lead_id": null,
+    "status": "FOLLOW_UP",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": null,
+    "method": null,
+    "status_code": 200
+  },
+  "result": {
+    "message": "Intent could not be identified. No CRM action taken."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Check the status of lead 7b1b8f54.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "LEAD_UPDATE",
+  "entities": {
+    "name": null,
+    "city": null,
+    "phone": null,
+    "email": null,
+    "visit_time": null,
+    "lead_id": "7b1b8f54",
+    "status": "FOLLOW_UP",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": "/crm/lead/update",
+    "method": "POST",
+    "status_code": 200
+  },
+  "result": {
+    "message": "Successfully processed intent 'LEAD_UPDATE' for user pytest-demo."
+  }
+}
+------------------------------------------------------------
+Input JSON:
+{
+  "transcript": "Show me all leads created today.",
+  "metadata": {
+    "user_id": "pytest-demo"
+  }
+}
+Output JSON:
+{
+  "intent": "UNKNOWN",
+  "entities": {
+    "name": null,
+    "city": null,
+    "phone": null,
+    "email": null,
+    "visit_time": "2026-05-07T00:00:00",
+    "lead_id": null,
+    "status": "NEW",
+    "source": null
+  },
+  "crm_call": {
+    "endpoint": null,
+    "method": null,
+    "status_code": 200
+  },
+  "result": {
+    "message": "Intent could not be identified. No CRM action taken."
+  }
+}
+------------------------------------------------------------

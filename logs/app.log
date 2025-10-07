@@ -1,0 +1,31 @@
+2025-10-07 06:52:18,894 | INFO | voice_bot | [info] Loading embedding model {EMBED_MODEL_NAME}
+2025-10-07 06:52:26,077 | INFO | voice_bot | [info] Loading NER model: Davlan/xlm-roberta-base-ner-hrl
+2025-10-07 06:52:27,234 | INFO | voice_bot | [info] Loading NER model: zero-shot-classification
+2025-10-07 06:52:27,238 | INFO | voice_bot | [API] /bot/handle called by user_id=unknown
+2025-10-07 06:52:27,238 | INFO | voice_bot | [BOT] Processing request for transcript='Add a new lead: Rohan Sharma from Gurgaon, phone 9876543210, source Instagram....'
+2025-10-07 06:52:27,297 | INFO | voice_bot | [model] Intent scores: LEAD_CREATE=0.75, VISIT_SCHEDULE=0.16, LEAD_UPDATE=0.09
+2025-10-07 06:52:28,595 | INFO | voice_bot | [BOT] Extracted entities: {'name': 'Rohan Sharma', 'city': 'Gurgaon', 'phone': '+919876543210', 'email': None, 'visit_time': None, 'lead_id': None, 'status': 'NEW', 'source': 'Instagram'}
+2025-10-07 06:52:28,595 | INFO | voice_bot | CRM call → /crm/lead/create (POST) [200 OK]
+2025-10-07 06:52:28,595 | INFO | voice_bot | Response returned to client.
+2025-10-07 06:52:28,595 | INFO | voice_bot | [BOT] Processing request for transcript='Add a new lead: Rohan Sharma from Gurgaon, phone 9876543210, source Instagram....'
+2025-10-07 06:52:28,620 | INFO | voice_bot | [model] Intent scores: LEAD_CREATE=0.75, VISIT_SCHEDULE=0.16, LEAD_UPDATE=0.09
+2025-10-07 06:52:29,008 | INFO | voice_bot | [BOT] Extracted entities: {'name': 'Rohan Sharma', 'city': 'Gurgaon', 'phone': '+919876543210', 'email': None, 'visit_time': None, 'lead_id': None, 'status': 'NEW', 'source': 'Instagram'}
+2025-10-07 06:52:29,008 | INFO | voice_bot | CRM call → /crm/lead/create (POST) [200 OK]
+2025-10-07 06:52:29,008 | INFO | voice_bot | Response returned to client.
+2025-10-07 06:52:58,144 | INFO | voice_bot | [API] /bot/handle called by user_id=unknown
+2025-10-07 06:52:58,144 | INFO | voice_bot | [BOT] Processing request for transcript='Add a new lead: Rohan Pharma from Gurgaon, phone 9876543210, source Instagram....'
+2025-10-07 06:52:58,220 | INFO | voice_bot | [model] Intent scores: LEAD_CREATE=0.75, VISIT_SCHEDULE=0.16, LEAD_UPDATE=0.09
+2025-10-07 06:52:58,627 | INFO | voice_bot | [BOT] Extracted entities: {'name': 'Rohan Pharma', 'city': 'Gurgaon', 'phone': '+919876543210', 'email': None, 'visit_time': None, 'lead_id': None, 'status': 'NEW', 'source': 'Instagram'}
+2025-10-07 06:52:58,627 | INFO | voice_bot | CRM call → /crm/lead/create (POST) [200 OK]
+2025-10-07 06:52:58,627 | INFO | voice_bot | Response returned to client.
+2025-10-07 06:52:58,627 | INFO | voice_bot | [BOT] Processing request for transcript='Add a new lead: Rohan Pharma from Gurgaon, phone 9876543210, source Instagram....'
+2025-10-07 06:52:58,654 | INFO | voice_bot | [model] Intent scores: LEAD_CREATE=0.75, VISIT_SCHEDULE=0.16, LEAD_UPDATE=0.09
+2025-10-07 06:52:59,066 | INFO | voice_bot | [BOT] Extracted entities: {'name': 'Rohan Pharma', 'city': 'Gurgaon', 'phone': '+919876543210', 'email': None, 'visit_time': None, 'lead_id': None, 'status': 'NEW', 'source': 'Instagram'}
+2025-10-07 06:52:59,066 | INFO | voice_bot | CRM call → /crm/lead/create (POST) [200 OK]
+2025-10-07 06:52:59,066 | INFO | voice_bot | Response returned to client.
+2025-10-07 06:53:32,171 | INFO | voice_bot | [info] Loading embedding model {EMBED_MODEL_NAME}
+2025-10-07 06:53:38,466 | INFO | voice_bot | [info] Loading NER model: Davlan/xlm-roberta-base-ner-hrl
+2025-10-07 06:53:39,652 | INFO | voice_bot | [info] Loading NER model: zero-shot-classification
+2025-10-07 06:56:03,088 | INFO | voice_bot | [info] Loading embedding model {EMBED_MODEL_NAME}
+2025-10-07 06:56:08,930 | INFO | voice_bot | [info] Loading NER model: Davlan/xlm-roberta-base-ner-hrl
+2025-10-07 06:56:10,100 | INFO | voice_bot | [info] Loading NER model: zero-shot-classification

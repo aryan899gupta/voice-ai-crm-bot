@@ -1,0 +1,50 @@
+This is a note from me (Aryan Gupta) to the developers who crafted the problem statement,
+I wanted to go beyond the typical readme and take a moment to explain my approach to solving this problem.
+
+First of all, thank you for considering me for this opportunity.
+
+In my mind, I had structured this problem into 3 sections:
+    1. Identifying the intent of the user
+    2. Extracting key entities 
+    3. Backend Development - FastAPI, edge case handling, error handler, response bodies
+
+I want to dive deeper into point 1 and 2.
+
+So, while it was not explicitly mentioned anywhere in the assignment - 
+I believe on the basis of my business acumen that speed and scalability are also 2 crucial soft parameters in addition to the hard targets provided in the assignment.
+Hence, I wanted to ensure that I try to use open source tools/technologies which scale well in case of multiple quick requests to the bot.
+
+
+1. Identifying Intents:
+For identifying intents I have used a combination of SentenceTransformers and K Nearest Neighbors technique
+So, for this particular use case where we have only 3 buckets with fairly decent semantic seperation.
+
+From some R&D one can see that training over simple phrases and keywords in this case gives better seperation between classes as compared to training over sentences 
+because intra-sentence semantics and patterns do not really play a big role in defining the class of a STT prompt.
+
+Hence, I decided to generate a small database using manual and synthetic approaches containing bucket-relevant keywords.
+I generate embeddings and indexes for each of the keyword and then use KNN to compare that for my prompt what are the closes 4 keywords.
+I do this rigorously over verbs, keywords and regex phrases and get a consolidated score which performs very well.
+
+The knowledge base of the CRM buckets enables me to form highly niche and segrating datasets, boosting the performance of KNN significantly when used with a smart model like SBERT
+
+Very quick and very scalable approach.
+
+2. Extracting entities
+As easy as it was to conceptualize this approach, it was equally tricky to implement it.
+Extracting names and cities was straightforward - using NER 
+There were pre-trained libraries and models available for datetime phone number and emails as well, but to cover edge cases and noisier inputs, a robus fall back function was required.
+So, a lot of time was spent in identifying and creating fall back opportunities to identify and extracte entities with maximum accuracy.
+
+
+So, that pretty much sums up my note describing my thought process behind my using this approach for solving the problem.
+
+As future steps - 
+1. I would love to work on the "UNKNOWN" tagged cases, breaking ties between buckets basis the quality and quantity of enitites captured.
+2. Work on trying to create and leverage a broader and deeper set of synthetic data to capture more diverse patterns, casual STT scenarios, without adding too much noise and complexities.
+
+
+Thank you for making it this far!
+
+
+

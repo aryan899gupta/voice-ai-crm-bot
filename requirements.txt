@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sentence-transformers
+transformers
+scikit-learn
+phonenumbers
+dateparser
+email-validator
+pytest
+torch
+pydantic
+python-dotenv
