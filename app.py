@@ -64,12 +64,6 @@ def handle_bot(req: BotRequest):
         raise HTTPException(status_code=code, detail=error)
 
 
-    #Run model pipeline
-    try:
-        result = main_bot.process_request(payload)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error running model: {e}")
-
     #Return model output
     if not isinstance(result, dict):
         error, code = format_error("PARSING_ERROR", "Model returned invalid output format (expected dict).", 500)
