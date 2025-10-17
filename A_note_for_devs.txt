@@ -42,6 +42,7 @@ So, that pretty much sums up my note describing my thought process behind my usi
 As future steps - 
 1. I would love to work on the "UNKNOWN" tagged cases, breaking ties between buckets basis the quality and quantity of enitites captured.
 2. Work on trying to create and leverage a broader and deeper set of synthetic data to capture more diverse patterns, casual STT scenarios, without adding too much noise and complexities.
+3. Try to score my NER and Intent detection models over precision, recall and F1.
 
 
 Thank you for making it this far!
