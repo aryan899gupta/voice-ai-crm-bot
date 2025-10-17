@@ -81,7 +81,7 @@ def extract_datetime(text: str) -> Optional[str]:
     if not text:
         return None
 
-    # --- 1️⃣ Remove detected phone numbers ---
+    # --- Remove detected phone numbers ---
     try:
         for match in phonenumbers.PhoneNumberMatcher(text, "IN"):
             phone_raw = match.raw_string
@@ -89,7 +89,7 @@ def extract_datetime(text: str) -> Optional[str]:
     except Exception:
         pass
 
-    # --- 2️⃣ Try normal parsing first ---
+    # --- Try normal parsing first ---
     try:
         found = search_dates(text, settings={"PREFER_DATES_FROM": "future"})
     except Exception:
